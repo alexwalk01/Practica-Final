@@ -3,6 +3,8 @@ import { feathers } from '@feathersjs/feathers'
 import authenticationClient from '@feathersjs/authentication-client'
 export {}
 
+export {}
+
 /**
  * Returns a  client for the softwareland-backend app.
  *
@@ -19,6 +21,8 @@ export const createClient = (connection, authenticationOptions = {}) => {
   client.set('connection', connection)
 
   client.configure(residentesClient)
+
+  client.configure(residentsClient)
 
   return client
 }
