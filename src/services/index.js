@@ -1,6 +1,5 @@
-import { residentes } from './residentes/residentes.js'
-export const services = app => {
-  app.configure(residentes)
+import { residents } from './residents/residents.js'
 
-  // All services will be registered here
+export const services = app => {
+  app.configure(residents)
 }

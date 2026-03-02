@@ -1,5 +1,8 @@
 'use client'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faPencil, faTrash } from '@fortawesome/free-solid-svg-icons'
+
 export default function ResidentsTable({
   residents,
   onView,
@@ -43,23 +46,26 @@ export default function ResidentsTable({
                   <button
                     type="button"
                     onClick={() => onView(resident)}
-                    className="inline-flex items-center px-2 py-1 rounded bg-blue-500 text-white hover:bg-blue-600"
+                    className="inline-flex items-center gap-1 px-2 py-1 rounded bg-blue-500 text-white hover:bg-blue-600"
                   >
+                    <FontAwesomeIcon icon={faEye} />
                     View
                   </button>
                   <button
                     type="button"
                     onClick={() => onEdit(resident)}
-                    className="inline-flex items-center px-2 py-1 rounded bg-yellow-500 text-white hover:bg-yellow-600"
+                    className="inline-flex items-center gap-1 px-2 py-1 rounded bg-yellow-500 text-white hover:bg-yellow-600"
                   >
+                    <FontAwesomeIcon icon={faPencil} />
                     Edit
                   </button>
                   <button
                     type="button"
                     onClick={() => onDelete(resident)}
                     disabled={deletingId === (resident._id || resident.id)}
-                    className="inline-flex items-center px-2 py-1 rounded bg-red-500 text-white hover:bg-red-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="inline-flex items-center gap-1 px-2 py-1 rounded bg-red-500 text-white hover:bg-red-600 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
+                    <FontAwesomeIcon icon={faTrash} />
                     {deletingId === (resident._id || resident.id) ? 'Deleting...' : 'Delete'}
                   </button>
                 </div>

@@ -18,9 +18,11 @@ import { mongodb } from './mongodb.js'
 import { services } from './services/index.js'
 import { channels } from './channels.js'
 import path from 'path'
+import { fileURLToPath } from 'url'
 
 const app = express(feathers())
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')))
 
 // Load app configuration
